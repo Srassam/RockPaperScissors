@@ -14,10 +14,12 @@
 
         var cpuChoice = ["r", "p", "s"];
 
-
+        var wins = 0;
+        var losses = 0;
+        var ties = 0;
         for (var i = 0; i <= 2; i++) {
 
-            //var pick = Math.floor(Math.random() * 10 + 1)
+
 
             //1.prompt user to choose from r,p,s
             var userPick = prompt("Please pick r,p,s to start!");
@@ -28,25 +30,23 @@
             var cpuPick = cpuChoice[Math.floor(Math.random() * cpuChoice.length)];
             if (userPick === "r" || userPick === "p" || userPick === "s") {
                 alert("The computer chose " + cpuPick);
+                // Win/lose conditions
+                if ((userPick === "r" && cpuPick === "s") ||
+                    (userPick === "p" && cpuPick === "r") ||
+                    (userPick === "s" && cpuPick === "p")) { wins++; alert("You've won " + wins + "times!!") }
+                else if (userPick === cpuPick) {
+                    ties++;
+                    alert("You've tied " + ties + " times.");
+                } else {
+                    losses++;
+                    alert("You've lost " + losses + " times.");
+                }
 
             }
         }
-        //3.Alert if user or computer won round
-        alert()
-        //4.prompt user to choose from r,p,s
-        var userPick = prompt("Please pick r,p,s");
-        //5.Computer will make a selection from r,p,s
-        //6.Alert if user or computer won round
-        alert()
-        //7.prompt user to choose from r,p,s
-        var userPick = prompt("Please pick r,p,s");
-        //8.Computer will make a selection from r,p,s
-        //9.Alert if user or computer won round
-        alert()
+
         //10. post score of wins,losses and ties
-        var wins = 0;
-        var losses = 0;
-        var tied = 0;
+        alert("total wins: " + wins + "\ntotal losses: " + losses + "\ntotal ties: " + ties);
     </script>
 </body>
 
