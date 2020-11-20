@@ -12,15 +12,18 @@
     <script>
         var choice = ["r", "p", "s"]
 
-        var cpuPick = ()
+        var cpuPick = ["r", "p", "s"]
 
 
         for (var i = 0; i <= 2; i++) {
 
-            var pick = Math.floor(Math.random() * 10 + 1)
+            //var pick = Math.floor(Math.random() * 10 + 1)
+
+            //1.prompt user to choose from r,p,s
+            var userPick = prompt("Please pick r,p,s to start!");
+            userPick = userPick.toLocaleLowerCase();
+            console.log(userPick);
         }
-        //1.prompt user to choose from r,p,s
-        var userPick = prompt("Please pick r,p,s");
         //2.Computer will make a selection from r,p,s
         //3.Alert if user or computer won round
         alert()
