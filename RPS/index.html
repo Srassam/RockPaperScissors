@@ -10,9 +10,9 @@
 
 <body>
     <script>
-        var choice = ["r", "p", "s"]
+        var choice = ["r", "p", "s"];
 
-        var cpuPick = ["r", "p", "s"]
+        var cpuChoice = ["r", "p", "s"];
 
 
         for (var i = 0; i <= 2; i++) {
@@ -21,10 +21,16 @@
 
             //1.prompt user to choose from r,p,s
             var userPick = prompt("Please pick r,p,s to start!");
-            userPick = userPick.toLocaleLowerCase();
-            console.log(userPick);
+            userPick = userPick.toLowerCase();
+
+
+            //2.Computer will make a selection from r,p,s
+            var cpuPick = cpuChoice[Math.floor(Math.random() * cpuChoice.length)];
+            if (userPick === "r" || userPick === "p" || userPick === "s") {
+                alert("The computer chose " + cpuPick);
+
+            }
         }
-        //2.Computer will make a selection from r,p,s
         //3.Alert if user or computer won round
         alert()
         //4.prompt user to choose from r,p,s
